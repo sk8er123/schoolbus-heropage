@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>통학버스 · 우리 아이 버스, 지금 어디쯤 왔을까요?</title>
+  <meta name="description" content="통학버스 위치와 도착 예정 시간을 학부모에게 실시간으로 알려 주는 학교 통학버스 서비스. 학부모 앱, 기사 앱, 학교 관리자 웹으로 구성됩니다.">
+  <meta property="og:title" content="통학버스 · 우리 아이 버스, 지금 어디쯤 왔을까요?">
+  <meta property="og:description" content="버스 위치와 도착 예정 시간을 실시간으로. 학교는 지도 한 장으로 모든 버스를 관제합니다.">
+  <meta property="og:image" content="assets/illust/hero.webp">
+  <meta name="theme-color" content="#1d4fd1">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="통학버스 처음으로">
+        <img src="assets/favicon.svg" alt="" width="32" height="32">
+        <span>통학버스</span>
+      </a>
+      <nav class="nav__links" aria-label="주요 메뉴">
+        <a href="#parents">학부모</a>
+        <a href="#drivers">기사님</a>
+        <a href="#school">학교</a>
+        <a href="#setup">도입 절차</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#contact">도입 문의</a>
+      <button class="nav__toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" id="mobile-menu" aria-label="모바일 메뉴" hidden>
+      <a href="#parents">학부모</a>
+      <a href="#drivers">기사님</a>
+      <a href="#school">학교</a>
+      <a href="#setup">도입 절차</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="#contact">도입 문의</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="dot dot--live"></span>실시간 통학버스 위치 서비스</p>
+          <h1>우리 아이 버스,<br><em>지금 어디쯤</em> 왔을까요?</h1>
+          <p class="lead">버스가 어디쯤 오는지, 우리 정류장에 몇 분 뒤 닿는지 학부모 휴대전화에 바로 보입니다. 기사님은 버튼 하나만 누르고, 학교는 지도 한 장으로 모든 버스를 봅니다.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact">도입 문의하기</a>
+            <a class="btn btn--ghost" href="#how">어떻게 동작하나요?</a>
+          </div>
+          <ul class="hero__chips" aria-label="핵심 특징">
+            <li>회원 가입 없음</li>
+            <li>위치는 운행 중에만</li>
+            <li>운행 자동 생성</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap hero__stage" aria-label="서비스 화면 미리보기">
+        <figure class="browser reveal">
+          <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>관리자 웹 · 실시간 관제</span></div>
+          <img src="assets/shots/admin-02-dashboard-live.webp" width="1568" height="784" alt="관리자 웹 실시간 관제 대시보드. 지도 위에 1호차가 광화문 등교 노선을 따라 움직이고, 오른쪽에 오늘 운행 목록이 보입니다.">
+        </figure>
+        <figure class="phone phone--left reveal" style="--d:.15s">
+          <img src="assets/shots/student-10-trip-live.webp" width="720" height="1600" alt="학생 앱 노선 화면. 1호차가 태평로 2가에 도착했고 예시초등학교 정문까지 약 3분 남았다고 표시됩니다.">
+          <figcaption>학부모 앱</figcaption>
+        </figure>
+        <figure class="phone phone--right reveal" style="--d:.3s">
+          <img src="assets/shots/driver-14-driving.webp" width="720" height="1600" alt="기사 앱 운행 중 화면. 위치 전송 정상, 다음 정류장 서울시청 앞까지 약 4분.">
+          <figcaption>기사 앱</figcaption>
+        </figure>
+        <div class="toast reveal" style="--d:.5s" aria-hidden="true">
+          <span class="toast__icon">🚌</span>
+          <div><b>1호차가 곧 도착해요</b><small>서울시청 앞 · 약 3분 후</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 신뢰 지표 -->
+    <section class="strip" aria-label="한눈에 보는 특징">
+      <div class="wrap strip__grid">
+        <div><strong>3개</strong><span>학부모 앱 · 기사 앱 · 관리자 웹이<br>하나로 연결</span></div>
+        <div><strong>1번</strong><span>기사님이 누르는 버튼은<br>‘운행 시작’ 하나</span></div>
+        <div><strong>8자리</strong><span>학부모는 학교 인증 코드만<br>넣으면 바로 시작</span></div>
+        <div><strong>0개</strong><span>학부모에게 묻는 이름·전화번호</span></div>
+      </div>
+    </section>
+
+    <!-- 하루 흐름 -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">하루 흐름</p>
+          <h2>한 번 등록하면, 매일 저절로 돌아갑니다</h2>
+          <p>학교가 정류장·노선·시간표를 한 번 넣어 두면 운행이 날마다 자동으로 만들어집니다.</p>
+        </header>
+        <ol class="flow">
+          <li class="reveal">
+            <span class="flow__no">1</span>
+            <h3>학교가 한 번 등록</h3>
+            <p>정류장·노선·차량·기사·시간표를 넣으면 예정 운행이 자동으로 생깁니다.</p>
+          </li>
+          <li class="reveal" style="--d:.08s">
+            <span class="flow__no">2</span>
+            <h3>기사님은 출발만</h3>
+            <p>첫 정류장에서 <b>운행 시작</b>을 누르고 운전합니다. 위치는 앱이 알아서 보냅니다.</p>
+          </li>
+          <li class="reveal" style="--d:.16s">
+            <span class="flow__no">3</span>
+            <h3>학부모는 확인만</h3>
+            <p>내 정류장 도착 예정 시간을 보고, 출발·도착 알림을 받습니다.</p>
+          </li>
+          <li class="reveal" style="--d:.24s">
+            <span class="flow__no">4</span>
+            <h3>학교는 실시간 관제</h3>
+            <p>지연·결행을 등록하면 학생 앱과 기사 앱에 바로 전달됩니다.</p>
+          </li>
+          <li class="reveal" style="--d:.32s">
+            <span class="flow__no">5</span>
+            <h3>도착하면 자동 종료</h3>
+            <p>마지막 정류장에 닿으면 운행이 끝나고 기록이 남습니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 학부모 -->
+    <section class="section section--tint" id="parents">
+      <div class="wrap feature">
+        <div class="feature__text reveal">
+          <p class="eyebrow eyebrow--blue">학부모 · 학생 앱</p>
+          <h2>정류장에서 마냥 기다리지 않아도 됩니다</h2>
+          <p class="lead">버스가 지금 어느 정류장을 지났는지, 우리 정류장까지 몇 분 남았는지 한눈에 봅니다.</p>
+          <ul class="checks">
+            <li><b>도착 예정 시간</b> — “약 3분 후(19:32)”처럼 분 단위로 알려 줍니다.</li>
+            <li><b>출발·도착 알림</b> — 내 정류장을 즐겨찾기하면 버스가 출발할 때 푸시가 옵니다.</li>
+            <li><b>긴급 공지 팝업</b> — 결행·지연은 앱을 열자마자 빨간 창으로 보입니다.</li>
+            <li><b>가입 없이 시작</b> — 가정통신문의 학교 인증 코드 8자리만 넣으면 됩니다.</li>
+          </ul>
+          <img class="feature__illust" src="assets/illust/parent.webp" width="1400" height="1045" alt="" loading="lazy">
+        </div>
+        <div class="phones reveal" style="--d:.1s">
+          <figure class="phone"><img src="assets/shots/student-09-stop-eta.webp" width="720" height="1600" alt="정류장 화면. 서울시청 앞 정류장에 1호차가 약 3분 후 도착 예정." loading="lazy"><figcaption>내 정류장 도착 예정</figcaption></figure>
+          <figure class="phone phone--up"><img src="assets/shots/student-11-urgent-popup.webp" width="720" height="1600" alt="긴급 공지 팝업. 광화문 등교 노선 21시 30분 운행이 차량 고장으로 결행되었다는 안내." loading="lazy"><figcaption>긴급 공지 팝업</figcaption></figure>
+          <figure class="phone"><img src="assets/shots/student-13-notices.webp" width="720" height="1600" alt="공지 목록. 결행과 지연 공지가 시간순으로 보입니다." loading="lazy"><figcaption>공지 모아 보기</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기사님 -->
+    <section class="section" id="drivers">
+      <div class="wrap feature feature--reverse">
+        <div class="feature__text reveal">
+          <p class="eyebrow eyebrow--green">기사 앱</p>
+          <h2>운전 중에는 아무것도 누르지 않습니다</h2>
+          <p class="lead">출발할 때 커다란 <b>운행 시작</b> 버튼 하나. 나머지는 앱과 학교 서버가 알아서 합니다.</p>
+          <ul class="checks checks--green">
+            <li><b>큰 글씨, 큰 버튼</b> — 휴대전화 번호와 PIN 6자리로 로그인합니다.</li>
+            <li><b>운행 전 자동 점검</b> — 위치·알림·배터리 절전·인터넷·앱 버전을 미리 확인합니다.</li>
+            <li><b>신호가 약해도 안심</b> — 위치를 휴대전화에 저장했다가 연결되면 한꺼번에 보냅니다.</li>
+            <li><b>버튼 하나로 문제 신고</b> — 늦어져요·고장·사고를 학교에 바로 알립니다.</li>
+            <li><b>마지막 정류장에서 자동 종료</b> — 종료 버튼을 잊어도 괜찮습니다.</li>
+          </ul>
+          <img class="feature__illust" src="assets/illust/driver.webp" width="1400" height="1045" alt="" loading="lazy">
+        </div>
+        <div class="phones reveal" style="--d:.1s">
+          <figure class="phone"><img src="assets/shots/driver-09-home.webp" width="720" height="1600" alt="기사 앱 홈. 오늘 운행 광화문 등교 노선과 초록색 운행 시작 버튼." loading="lazy"><figcaption>운행 시작</figcaption></figure>
+          <figure class="phone phone--up"><img src="assets/shots/driver-24-report.webp" width="720" height="1600" alt="문제 신고 화면. 늦어져요, 차가 고장 났어요, 사고가 났어요, 기타 버튼." loading="lazy"><figcaption>문제 신고</figcaption></figure>
+          <figure class="phone"><img src="assets/shots/driver-28-ended.webp" width="720" height="1600" alt="운행 종료 화면. 운행이 끝났습니다(2분 운행)." loading="lazy"><figcaption>운행 종료</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 학교 -->
+    <section class="section section--dark" id="school">
+      <div class="wrap">
+        <div class="school__head">
+          <header class="section__head section__head--left reveal">
+            <p class="eyebrow eyebrow--yellow">학교 관리자 웹</p>
+            <h2>모든 버스를, 지도 한 장으로</h2>
+            <p>행정실·교무실에서 브라우저로 버스를 실시간으로 보고, 지연·결행·공지를 처리합니다.</p>
+          </header>
+          <img class="school__illust reveal" style="--d:.1s" src="assets/illust/school.webp" width="1400" height="1045" alt="" loading="lazy">
+        </div>
+
+        <div class="tabs reveal" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="관리자 웹 기능">
+            <button role="tab" id="tab-live" aria-controls="panel-live" aria-selected="true">실시간 관제</button>
+            <button role="tab" id="tab-alert" aria-controls="panel-alert" aria-selected="false" tabindex="-1">이상 알림</button>
+            <button role="tab" id="tab-delay" aria-controls="panel-delay" aria-selected="false" tabindex="-1">지연·결행 처리</button>
+            <button role="tab" id="tab-replay" aria-controls="panel-replay" aria-selected="false" tabindex="-1">경로 재생</button>
+            <button role="tab" id="tab-eta" aria-controls="panel-eta" aria-selected="false" tabindex="-1">ETA 정확도</button>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-live" aria-labelledby="tab-live">
+            <div class="panel__text">
+              <h3>지금 달리는 버스가 지도 위에서 움직입니다</h3>
+              <p>운행 중·예정·완료·결행·지연·미확인 알림 수를 맨 위에서 보고, 노선마다 지난 정류장 수와 지연을 확인합니다. 알림음과 브라우저 알림도 켤 수 있습니다.</p>
+            </div>
+            <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shots/admin-02-dashboard-live.webp" width="1568" height="784" alt="실시간 관제 대시보드." loading="lazy"></figure>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-alert" aria-labelledby="tab-alert" hidden>
+            <div class="panel__text">
+              <h3>문제가 생기면 먼저 알려 드립니다</h3>
+              <p>출발 시각이 지났는데 시작하지 않은 운행, 신호 끊김, 경로 이탈, 기사님의 문제 신고가 빨간 알림으로 뜹니다. 확인한 알림은 눌러서 정리합니다.</p>
+            </div>
+            <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shots/admin-03-dashboard-alert.webp" width="1568" height="784" alt="대시보드 오른쪽에 이상 알림이 표시된 화면." loading="lazy"></figure>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-delay" aria-labelledby="tab-delay" hidden>
+            <div class="panel__text">
+              <h3>지연 등록과 공지가 한 번에</h3>
+              <p>지연 시간과 사유를 고르면 새 예정 시각이 계산되고, 공지 제목·본문이 자동으로 채워집니다. 푸시를 켜면 그 노선을 고른 학부모에게 바로 알림이 갑니다. 지연을 바꾸면 앞서 낸 공지는 자동으로 보관됩니다.</p>
+            </div>
+            <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shots/admin-09-trip-delay.webp" width="1568" height="784" alt="지연 등록 창. 지연 시간, 사유, 공지 게시와 푸시 발송 옵션." loading="lazy"></figure>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-replay" aria-labelledby="tab-replay" hidden>
+            <div class="panel__text">
+              <h3>민원·사고 확인은 경로 재생으로</h3>
+              <p>버스가 실제로 다닌 길을 1×·4×·16× 속도로 다시 봅니다. 기사님 위치는 개인위치정보라 조회 사유를 넣어야 하고, 조회 기록은 감사 로그에 남습니다.</p>
+            </div>
+            <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shots/admin-08-replay.webp" width="1568" height="784" alt="경로 재생 화면. 지도 위 실제 궤적과 재생 막대." loading="lazy"></figure>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-eta" aria-labelledby="tab-eta" hidden>
+            <div class="panel__text">
+              <h3>도착 예정 시간, 얼마나 맞았을까?</h3>
+              <p>학생 앱이 보여 준 도착 예정 시각과 실제 도착의 차이를 노선별로 봅니다. 오차가 큰 노선은 정류장 계획 시간을 다시 맞추면 됩니다.</p>
+            </div>
+            <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/shots/admin-08a-eta.webp" width="1568" height="784" alt="ETA 정확도 통계 화면." loading="lazy"></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 도입 절차 -->
+    <section class="section" id="setup">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">도입 절차</p>
+          <h2>처음 한 번, 순서대로 넣으면 끝</h2>
+          <p>지도에서 정류장을 찍고 노선을 그리면 됩니다. 시간표를 저장하는 순간 일주일치 운행이 만들어집니다.</p>
+        </header>
+        <div class="steps">
+          <article class="step reveal">
+            <button class="step__shot" type="button" data-zoom="assets/shots/admin-20-settings-school.webp" aria-label="학교 정보 화면 크게 보기"><img src="assets/shots/admin-20-settings-school.webp" width="1568" height="784" alt="" loading="lazy"></button>
+            <span class="step__no">①</span>
+            <h3>학교 정보</h3>
+            <p>학교 이름·문의 전화를 넣고, 가정통신문에 넣을 학생 앱 인증 코드를 확인합니다.</p>
+          </article>
+          <article class="step reveal" style="--d:.06s">
+            <button class="step__shot" type="button" data-zoom="assets/shots/admin-10-stop-new.webp" aria-label="정류장 등록 화면 크게 보기"><img src="assets/shots/admin-10-stop-new.webp" width="1568" height="784" alt="" loading="lazy"></button>
+            <span class="step__no">②</span>
+            <h3>정류장</h3>
+            <p>지도에서 위치를 누르면 정류장이 생깁니다. 도착으로 판정할 범위도 정합니다.</p>
+          </article>
+          <article class="step reveal" style="--d:.12s">
+            <button class="step__shot" type="button" data-zoom="assets/shots/admin-13-route-edit.webp" aria-label="노선 편집 화면 크게 보기"><img src="assets/shots/admin-13-route-edit.webp" width="1568" height="784" alt="" loading="lazy"></button>
+            <span class="step__no">③</span>
+            <h3>노선</h3>
+            <p>정류장 순서를 정하고 버스가 다니는 길을 지도에 그립니다.</p>
+          </article>
+          <article class="step reveal" style="--d:.18s">
+            <button class="step__shot" type="button" data-zoom="assets/shots/admin-17-schedule-new.webp" aria-label="시간표 등록 화면 크게 보기"><img src="assets/shots/admin-17-schedule-new.webp" width="1568" height="784" alt="" loading="lazy"></button>
+            <span class="step__no">④</span>
+            <h3>차량 · 기사 · 시간표</h3>
+            <p>호차와 기사를 등록하고 출발 시각·요일을 고르면 운행이 자동으로 만들어집니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 개인정보 -->
+    <section class="section section--tint" id="privacy">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">안전과 개인정보</p>
+          <h2>아이의 정보는 받지 않고, 위치는 필요한 만큼만</h2>
+        </header>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">🛡️</div>
+            <h3>학부모 정보 0</h3>
+            <p>학생 앱은 회원 가입·로그인이 없습니다. 이름이나 전화번호도 묻지 않습니다.</p>
+          </article>
+          <article class="card reveal" style="--d:.06s">
+            <div class="card__icon" aria-hidden="true">📍</div>
+            <h3>운행 중에만 위치 수집</h3>
+            <p>기사님 위치는 운행하는 동안에만 보냅니다. 동의는 앱에서 받고 언제든 철회할 수 있습니다.</p>
+          </article>
+          <article class="card reveal" style="--d:.12s">
+            <div class="card__icon" aria-hidden="true">🧾</div>
+            <h3>조회는 사유와 함께</h3>
+            <p>지난 경로를 보려면 조회 사유를 써야 하고, 누가 언제 봤는지 감사 로그에 남습니다.</p>
+          </article>
+          <article class="card reveal" style="--d:.18s">
+            <div class="card__icon" aria-hidden="true">🔑</div>
+            <h3>학교 단위 인증 코드</h3>
+            <p>우리 학교 코드를 아는 사람만 볼 수 있습니다. 코드가 퍼지면 관리자 웹에서 재발급합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap wrap--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">자주 묻는 질문</p>
+          <h2>궁금한 점이 있으신가요?</h2>
+        </header>
+        <div class="faq reveal">
+          <details>
+            <summary>학부모는 어떻게 시작하나요?</summary>
+            <p>학생 앱을 설치하고 가정통신문에 있는 학교 인증 코드 8자리를 넣으면 됩니다. 아이가 타는 노선을 고르면 그 노선의 출발 알림과 긴급 공지를 받습니다.</p>
+          </details>
+          <details>
+            <summary>기사님 휴대전화는 어떤 것이 필요한가요?</summary>
+            <p>안드로이드 8.0 이상 휴대전화면 됩니다. 학교에서 받은 휴대전화 번호와 PIN 6자리로 로그인합니다.</p>
+          </details>
+          <details>
+            <summary>기사님이 운행 종료를 깜빡하면요?</summary>
+            <p>마지막 정류장에 도착하면 학교 서버가 운행을 자동으로 끝냅니다. 출발 시각이 지났는데 운행이 시작되지 않으면 학교에 이상 알림이 뜹니다.</p>
+          </details>
+          <details>
+            <summary>지하차도나 터널에서 신호가 끊기면 어떻게 되나요?</summary>
+            <p>기사 앱에 “위치 신호가 약해요” 띠가 뜨고 자동으로 다시 찾습니다. 인터넷이 안 될 때는 위치를 휴대전화에 저장해 두었다가 연결되면 한꺼번에 보냅니다.</p>
+          </details>
+          <details>
+            <summary>방학이나 재량휴업일에는요?</summary>
+            <p>관리자 웹의 운행 캘린더에서 운휴일을 지정합니다. 전체 노선을 쉬거나 일부 시간표만 쉬게 할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>버스가 늦어지면 학부모에게 어떻게 알리나요?</summary>
+            <p>관리자 웹에서 지연을 등록하면 공지가 자동으로 작성되고, 푸시를 켜면 그 노선을 고른 학부모에게 바로 알림이 갑니다. 기사님 앱에도 지연 소식이 보입니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="wrap cta__inner reveal">
+        <div>
+          <h2>우리 학교에도 통학버스를 연결해 보세요</h2>
+          <p>도입 상담부터 정류장·노선 등록까지 함께 도와드립니다.</p>
+        </div>
+        <div class="cta__actions">
+          <a class="btn btn--yellow" href="mailto:contact@example.com?subject=%ED%86%B5%ED%95%99%EB%B2%84%EC%8A%A4%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">도입 문의하기</a>
+          <a class="btn btn--light" href="#how">다시 둘러보기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand brand--small" href="#top"><img src="assets/favicon.svg" alt="" width="24" height="24"><span>통학버스</span></a>
+      <p>화면 이미지는 시험용 데이터로 찍었습니다. 화면 속 학교, 사람, 전화번호, 차량 번호는 실제가 아닙니다.</p>
+      <p>© 2026 통학버스</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="스크린샷 크게 보기">
+    <button class="lightbox__close" type="button" aria-label="닫기">×</button>
+    <img alt="">
+  </dialog>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
